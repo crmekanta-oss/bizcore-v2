@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root, [data-theme="dark"] {
+  --bg:#0c0e14; --surface:#13161f; --surface2:#1a1e2a; --card:#161923;
+  --border:#252a38; --admin:#3b82f6; --mkt:#f97316; --ceo:#22c55e;
+  --text:#dde3f0; --muted:#6b7280; --shadow:rgba(0,0,0,0.5);
+}
+
+[data-theme="light"] {
+  --bg:#f0f2f8; --surface:#ffffff; --surface2:#f3f5fb; --card:#ffffff;
+  --border:#e2e6ef; --admin:#2563eb; --mkt:#ea6c00; --ceo:#16a34a;
+  --text:#1a2035; --muted:#6b7280; --shadow:rgba(0,0,0,0.08);
+}
+
+body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; transition:background .3s,color .3s; }
+::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--surface);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+.pulse{animation:pulse 2s infinite;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.fade-up{animation:fadeUp .4s ease both;}
+input,select,button{font-family:'DM Sans',sans-serif;}
